@@ -1,15 +1,15 @@
 module.exports = {
   pathPrefix: "/leonids",
   siteMetadata: {
-    title: `Leonids`,
+    title: `this test blog`,
     author: {
-      name: `@ry_zou`,
-      summary: `web dev`,
+      name: `me`,
+      summary: ``,
     },
     description: `A simple, fixed sidebar two columns Gatsby.js blog starter.`,
     siteUrl: `https://renyuanz.github.io/leonids`,
     social: {
-      twitter: `ry_zou`,
+      twitter: ``,
     },
     defaultImage: "images/bg.jpeg",
   },
@@ -66,7 +66,7 @@ module.exports = {
         short_name: `Ryz`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#906CFF`,
         display: `minimal-ui`,
         icon: `content/assets/gatsby-icon.png`,
       },
@@ -83,5 +83,11 @@ module.exports = {
     `gatsby-plugin-offline`,
     "gatsby-plugin-dark-mode",
     `gatsby-plugin-postcss`,
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        bucketName: "ssilv-gatsby-test-bucket",
+      },
+    },
   ],
 }
