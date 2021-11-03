@@ -16,6 +16,8 @@ jobs:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
+      distribution_id: "E3O6CQFF5IMUHY"
+      bucket_name: "ssilv-gatsby-test-bucket"
       
     runs-on: ubuntu-latest
 
@@ -34,7 +36,7 @@ jobs:
     - run: npm ci
     - run: npm run build
     - run: npm run deploy
-    - run: aws cloudfront create-invalidation --distribution-id $distribution_id --paths "/*"
-      env: 
-        distribution_id: "E3O6CQFF5IMUHY"
+    - name: Create CloudFront invalidation
+      run: aws cloudfront create-invalidation --distribution-id ${{ env.distribution_id }} --paths "/*"
+
         

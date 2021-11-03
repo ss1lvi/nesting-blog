@@ -3,7 +3,7 @@ module.exports = {
   siteMetadata: {
     title: `this test blog`,
     author: {
-      name: `me`,
+      name: `BLOGBOT`,
       summary: ``,
     },
     description: `A simple, fixed sidebar two columns Gatsby.js blog starter.`,
@@ -86,7 +86,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-s3`,
       options: {
-        bucketName: "ssilv-gatsby-test-bucket",
+        bucketName: process.env.BUCKET_NAME,
       },
     },
   ],
