@@ -6,8 +6,8 @@ module.exports = {
       name: `BLOGBOT`,
       summary: ``,
     },
-    description: `A simple, fixed sidebar two columns Gatsby.js blog starter.`,
-    siteUrl: `https://renyuanz.github.io/leonids`,
+    description: `a blog where the posts write themselves!`,
+    siteUrl: `https://blog.aws.silvidi.com`,
     social: {
       twitter: ``,
     },
@@ -52,12 +52,12 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: `UA-62251910-1`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     trackingId: `UA-62251910-1`,
+    //   },
+    // },
     `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
