@@ -34,3 +34,4 @@ jobs:
     - run: npm ci
     - run: npm run build
     - run: npm run deploy
+    - run: aws cloudfront create-invalidation --distribution-id "E3O6CQFF5IMUHY" --paths "/*"
