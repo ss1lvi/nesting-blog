@@ -18,6 +18,7 @@ jobs:
       AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
       DISTRIBUTION_ID: "E3O6CQFF5IMUHY"
       BUCKET_NAME: "ssilv-gatsby-test-bucket"
+      AWS_EC2_METADATA_DISABLED: true
       
     runs-on: ubuntu-latest
 
@@ -34,8 +35,10 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-    - run: npm run build
-    - run: npm run deploy
+    - name: Build Gatsby site
+      run: npm run build
+    - name: Deploy site to S3 bucket
+      run: npm run deploy
     - name: Create CloudFront invalidation
       run: aws cloudfront create-invalidation --distribution-id ${{ env.DISTRIBUTION_ID }} --paths "/*"
 
